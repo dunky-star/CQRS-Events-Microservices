@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.springbank</groupId>
 	<artifactId>user.cmd.api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>user.cmd.api</name>
 	<description>User Command API project</description>
 	<properties>
@@ -20,6 +20,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-spring-boot-starter</artifactId>
+			<version>4.8.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
