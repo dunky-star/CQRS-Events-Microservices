@@ -22,6 +22,7 @@ import java.util.Collections;
 
 @Configuration
 public class AxonConfig {
+
     @Value("${spring.data.mongodb.host:127.0.0.1}")
     private String mongoHost;
 
@@ -30,6 +31,7 @@ public class AxonConfig {
 
     @Value("${spring.data.mongodb.database:user}")
     private String mongoDatabase;
+
 
     @Bean
     public MongoClient mongo() {
