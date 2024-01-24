@@ -20,7 +20,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Collections;
 
-
 @Configuration
 public class AxonConfig {
     @Value("${spring.data.mongodb.host:127.0.0.1}")
@@ -57,20 +56,12 @@ public class AxonConfig {
                 .build();
     }
 
-
-    // somewhere in your `@Configuration` class
-//    @Qualifier("eventSerializer")
-//    @Bean
-//    public Serializer eventSerializer() {
-//        return JacksonSerializer.builder().build();
-//    }
-
     @Bean
     public EventStorageEngine storageEngine(MongoClient client) {
         return MongoEventStorageEngine.builder()
                 .mongoTemplate(DefaultMongoTemplate.builder()
-                        .mongoDatabase(client)
-                        .build())
+                                .mongoDatabase(client)
+                                .build())
                 .build();
     }
 
@@ -81,7 +72,4 @@ public class AxonConfig {
                 .messageMonitor(configuration.messageMonitor(EventStore.class, "eventStore"))
                 .build();
     }
-
-
-
-} // End of AxonConfig class
+}
